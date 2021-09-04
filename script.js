@@ -2,13 +2,27 @@ const daysElement =document.getElementById('days');
 const hoursElement =document.getElementById('hours');
 const minutesElement =document.getElementById('minutes');
 const secondsElement =document.getElementById('seconds');
+const headline = document.getElementById('headline');
 
-let year = new Date().getFullYear()+1;
+let year = new Date().getFullYear();
 const newYears = `1 Jan ${year}` ;
+
+const cDate = new Date();
+const nYearDate = new Date(newYears);
+const distance = Math.floor(nYearDate-cDate);
+let year2 ="";
+
+if (distance > 0) {
+    year2 = new Date().getFullYear();
+} else {
+    year2 = new Date().getFullYear() +1;
+}
+
+const newYears2 = `1 Jan ${year2}`
 
 function countdown () {
     const currentDate =new Date();
-    const newYearsDate = new Date(newYears);
+    const newYearsDate = new Date(newYears2);
 
     const totalSeconds =(newYearsDate - currentDate)/ 1000;
 
@@ -21,6 +35,7 @@ function countdown () {
     hoursElement.innerHTML = formatTime(hours);
     minutesElement.innerHTML = formatTime(minutes);
     secondsElement.innerHTML = formatTime(seconds);
+    headline.innerHTML = `Neujahr ${year2}`;
 }
 
 function formatTime(time) {
