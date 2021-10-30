@@ -5,7 +5,7 @@ const secondsElement =document.getElementById('seconds');
 const headline = document.getElementById('headline');
 
 let year = new Date().getFullYear();
-const newYears = `1 Jan ${year}` ;
+const newYears = `31 Dec ${year}` ;
 
 const cDate = new Date();
 const nYearDate = new Date(newYears);
@@ -18,7 +18,7 @@ if (distance > 0) {
     year2 = new Date().getFullYear() +1;
 }
 
-const newYears2 = `1 Jan ${year2}`
+const newYears2 = `31 Dec ${year2} 23:59:59`
 
 function countdown () {
     const currentDate =new Date();
@@ -35,7 +35,7 @@ function countdown () {
     hoursElement.innerHTML = formatTime(hours);
     minutesElement.innerHTML = formatTime(minutes);
     secondsElement.innerHTML = formatTime(seconds);
-    headline.innerHTML = `Neujahr ${year2}`;
+    headline.innerHTML = `Silvester ${year2}`;
 }
 
 function formatTime(time) {

@@ -1,34 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body {
+.countdown_general {
     background-image: url(./assets/background.jpg);
+    filter: brightness(0.95);
     background-size: cover;
-    background-position: center center;
-    background-blend-mode: luminosity;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    height: 100%;
     margin: 0;
+    object-fit: cover;
 }
 
-h1 {
+.headline {
     font-weight: bold;
     font-size: 4rem;
     color: #fffe7a;
     text-shadow: 6px 4px 8px #140c01;
     margin-top: 5rem;
+    position: absolute;
 }
 
 .countdown-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 11rem;
 }
 
 .big-text {
@@ -36,7 +44,7 @@ h1 {
     font-size: 5rem;
     color: #fffe7a;
     text-shadow: 6px 4px 8px #140c01;
-    text-align:left;
+    text-align: center;
     line-height: 1;
     margin: 1rem 2rem; /* 1rem top und bottom 2 rem links rechts */
 }
@@ -47,5 +55,59 @@ span {
     font-weight: bold;
     color: #fffe7a;
     text-shadow: 6px 4px 8px #140c01;
-    margin: 1rem 2rem;    
+    margin: 1rem 2rem;   
 } 
+
+@media (max-width: 56.25em) {
+    .countdown-container {
+        margin-top: 7rem;
+    }
+
+    .headline {
+        font-size: 3.5rem;
+        margin-top: 1rem;
+    }
+
+    .big-text{
+        font-size: 3rem;
+        margin: 0.5rem 1rem;
+    }
+
+    span {
+        font-size: 1.5rem;
+        margin: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 40.125em) {
+    .headline {
+        font-size: 2.75rem
+    }
+
+    .big-text{
+        font-size: 2.5rem;
+    }
+
+    span {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 28.125em) {
+    .countdown-container {
+        flex-direction: column;
+    }
+
+    .headline {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    .big-text{
+        font-size: 2.5rem;
+    }
+
+    span {
+        font-size: 1.2rem;
+    }
+}
