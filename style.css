@@ -12,13 +12,12 @@
     filter: brightness(0.95);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    height: 100%;
     margin: 0;
-    object-fit: cover;
 }
 
 .headline {
@@ -80,6 +79,11 @@ span {
 }
 
 @media (max-width: 40.125em) {
+    .countdown_general {
+        object-fit: cover;
+        height: 100%;
+    }
+
     .headline {
         font-size: 2.75rem
     }
